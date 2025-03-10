@@ -38,6 +38,7 @@ function calcular() {
     if (resultado) {
         document.getElementById("resultado").innerHTML = Math.sqrt(parseFloat(resultado));
     }
+    }
 }
 
 // Calculo de potenciacao
