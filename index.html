@@ -16,7 +16,8 @@
             <table>
                 <tr>
                     
-                    <td><button class="botao" >1/x</button></td>
+                    <td><button class="botao"  style="font-size: 14px;"   onclick="insert(' ') ">Espaço</button></td>
+
                     <td><button class="botao" onclick="insert('/')">/</button></td>
                     <td><button class="botao" onclick="insert('*')">X</button></td>
                     <td><button class="botao" onclick="back()"><</button></td>
@@ -29,6 +30,7 @@
                     <td><button class="botao" onclick="insert('9')">9</button></td>
                     <td><button class="botao" onclick="insert('-')">-</button></td>
                     <td><button class="botao" onclick="insert('%')">%</button></td>
+
                 </tr>
 
                 <tr>
@@ -36,7 +38,9 @@
                     <td><button class="botao" onclick="insert('5')">5</button></td>
                     <td><button class="botao" onclick="insert('6')">6</button></td>
                     <td><button class="botao" onclick="insert('+')">+</button></td>
-                    <td> <button class="botao" onclick="insert('squareRoot()')">√</button></td>
+                    <td><button class="botao" onclick="insert('√')">√</button></td>
+
+
                 </tr>
 
                 <tr>
@@ -44,13 +48,15 @@
                     <td><button class="botao" onclick="insert('2')">2</button></td>
                     <td><button class="botao" onclick="insert('1')">1</button></td>
                     <td rowspan="2"><button class="botao" style=" height: 106px;" onclick="calcular()">=</button></td>
-                    <td> <button class="botao">x²</button></td>
+                    <td><button class="botao" onclick="insert('^')">x²</button></td>
+
                 </tr>
 
                 <tr>
                     <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
                     <td><button class="botao" onclick="insert('.')">.</button></td>
-                    <td> <button class="botao" style="font-size: 15px;">MMC</button></td>
+                    <td><button class="botao" style="font-size: 15px;" onclick="calcularMMC()">MMC</button></td>
+
                 </tr>
             </table>
         </div>
