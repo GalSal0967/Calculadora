@@ -20,53 +20,27 @@ function calcular()
 {
     var resultado = document.getElementById("resultado").innerHTML;
     if (resultado)
+
+        // Substituir a raiz quadrada (ex: √4 → Math.sqrt(4))
+        if (resultado.includes("√")) {
+            // Aqui substituímos o símbolo √ por Math.sqrt()
+            resultado = resultado.replace(/√(\d+(\.\d+)?)/g, "Math.sqrt($1)");
+        }
+    
+        // Substituir porcentagens (ex: 50%200 → (50/100)*200)
+        resultado = resultado.replace(/(\d+)%(\d+)/g, "($1/100)*$2");
+    
+        // Substituir potência (ex: 2^3 → Math.pow(2, 3))
+        resultado = resultado.replace(/(\d+)\^(\d+)/g, "Math.pow($1, $2)");
+    
+        // Avaliar a expressão e mostrar o resultado
+        if (resultado) {
+            document.getElementById("resultado").innerHTML = eval(resultado);
+        }
     {
         document.getElementById("resultado").innerHTML = eval(resultado);
-    }
-}
 
-// Calculo de Raiz Quadrada
-
-function calcular() {
-    var resultado = document.getElementById("resultado").innerHTML;
-
-    if (resultado.includes("√")) {
-        // Substituir √ por Math.sqrt() e avaliar a expressão
-        resultado = resultado.replace(/√(\d+(\.\d+)?)/g, "Math.sqrt($1)");
-    }
-
-    if (resultado) {
-        document.getElementById("resultado").innerHTML = Math.sqrt(parseFloat(resultado));
-    }
-    }
-}
-
-// Calculo de potenciacao
-
-function calcular() {
-    var resultado = document.getElementById("resultado").innerHTML;
-
-    // Substituir potência (ex: 2^3 → Math.pow(2,3))
-    resultado = resultado.replace(/(\d+)\^(\d+)/g, "Math.pow($1,$2)");
-
-    if (resultado) {
-        document.getElementById("resultado").innerHTML = eval(resultado);
-    }
-}
-
-// Calculo de porcentagem 
-
-function calcular() {
-    var resultado = document.getElementById("resultado").innerHTML;
-
-    // Substituir porcentagem (ex: 50%200 → (50/100)*200)
-    resultado = resultado.replace(/(\d+)%(\d+)/g, "($1/100)*$2");
-
-    // Substituir potência (ex: 2^3 → Math.pow(2,3))
-    resultado = resultado.replace(/(\d+)\^(\d+)/g, "Math.pow($1,$2)");
-
-    if (resultado) {
-        document.getElementById("resultado").innerHTML = eval(resultado);
+        
     }
 }
 
